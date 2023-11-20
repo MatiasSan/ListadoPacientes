@@ -11,12 +11,16 @@ const Formulario = ({ pacientes, setPacientes }) => {
 
   const [error, setError] = useState(false);
 
+  // generación de ID de manera aleatoria generarId()
+
   const generarId = () => {
     const random = Math.random().toString(36).substr(2);
     const fecha = Date.now().toString(36);
 
     return random + fecha;
   };
+
+  // Prevenir envio de datos al presionar submit
 
   const handleSubmit = (e) => {
     e.preventDefault();
